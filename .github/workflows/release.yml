@@ -85,7 +85,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest ]
+        os: [ macos-latest, ubuntu-latest, windows-2022 ]
     #    To compile the application for different platforms, use:
     #    os: [ macos-latest, ubuntu-latest, windows-latest ]
 
@@ -111,13 +111,15 @@ jobs:
 
       # Compile app and upload artifacts
       - name: Compile & release Electron app
+        if: matrix.os == 'ubuntu-latest'
+          sudo snap install snapcraft --classic
+       
         uses: samuelmeuli/action-electron-builder@v1
         env:
           VITE_APP_VERSION: ${{ needs.draft.outputs.version }}
         with:
           build_script_name: build
           args: --config .electron-builder.config.js
-
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
