@@ -112,7 +112,7 @@ jobs:
       # Compile app and upload artifacts
       - name: Compile & release Electron app
         if: matrix.os == 'ubuntu-latest'
-          sudo snap install snapcraft --classic
+          snap install snapcraft --classic
        
         uses: samuelmeuli/action-electron-builder@v1
         env:
