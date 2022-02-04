@@ -85,7 +85,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-2022 ]
+        os: [ macos-latest, windows-2022 ]
     #    To compile the application for different platforms, use:
     #    os: [ macos-latest, ubuntu-latest, windows-latest ]
 
@@ -115,11 +115,6 @@ jobs:
         env:
           VITE_APP_VERSION: ${{ needs.draft.outputs.version }}
         with:
-          if: matrix.os == 'ubuntu-latest'
-          run: |
-              apt update && apt install sudo
-              sudo apt-get update && sudo install snapd
-              snap install snapcraft --classic
           build_script_name: build
           args: --config .electron-builder.config.js
           # GitHub token, automatically provided to the action
