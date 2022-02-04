@@ -1,5 +1,6 @@
 name: Tests
 on:
+  workflow_dispatch: # Putting here is also fine!!
   push:
     branches:
       - main
