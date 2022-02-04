@@ -10,6 +10,7 @@ thumbs.db
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -54,3 +55,8 @@ thumbs.db
 # Editor-based Rest Client
 .idea/httpRequests
 /.idea/csv-plugin.xml
+
+.eslintrc.json
+.editorconfig
+prettier.config.js
+.nano-staged.json

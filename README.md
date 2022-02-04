@@ -22,3 +22,8 @@ $dist/win-unpacked/vite-electron-builder.exe
 - Vite
 - CodeMirror
 - Remark
+
+## What's Next
+
+- Restructuring: Moving all react components inside components folder
+- ReIconify: Change default icon to something new
