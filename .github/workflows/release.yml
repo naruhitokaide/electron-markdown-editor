@@ -111,13 +111,15 @@ jobs:
 
       # Compile app and upload artifacts
       - name: Compile & release Electron app
-        if: matrix.os == 'ubuntu-latest'
-          snap install snapcraft --classic
-       
         uses: samuelmeuli/action-electron-builder@v1
         env:
           VITE_APP_VERSION: ${{ needs.draft.outputs.version }}
         with:
+          if: matrix.os == 'ubuntu-latest'
+          run: |
+              apt update && apt install sudo
+              sudo apt-get update && sudo install snapd
+              snap install snapcraft --classic
           build_script_name: build
           args: --config .electron-builder.config.js
           # GitHub token, automatically provided to the action
