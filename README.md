@@ -27,3 +27,4 @@ $dist/win-unpacked/vite-electron-builder.exe
 
 - Restructuring: Moving all react components inside components folder
 - ReIconify: Change default icon to something new
+- Fix: Github Workflows
