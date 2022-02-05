@@ -15,7 +15,7 @@ This application solves the need for a lightweight and simple live github markdo
 
 ## Preview
 
-![image](https://user-images.githubusercontent.com/75939390/152511983-cc077006-67a9-4f02-9f6f-521a21c8ba74.png)
+![image](https://github.com/warmachine028/markdown-editor/blob/main/assets/preview.png)
 
 ## Requirements
 
