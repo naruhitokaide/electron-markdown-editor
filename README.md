@@ -1,8 +1,9 @@
     updated: Saturday, 5th February 2022
 
 <div align="center">
-<a href="https://github.com/warmachine028/markdown-editor">
-<img width=200 src="https://github.com/warmachine028/markdown-editor/tree/main/assets/icon.png" alt="markdown-editor"></a>
+    <a href="https://github.com/warmachine028/markdown-editor">
+        <img width=200 src="https://github.com/warmachine028/markdown-editor/tree/main/assets/icon.png" alt="markdown-editor">
+    </a>
     <p style="font-family: roboto, calibri; font-size:12pt; font-style:italic"> A modern looking application built with Electron-Vite-React🎉✨</p>
 </div>
 
