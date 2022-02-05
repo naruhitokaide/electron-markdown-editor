@@ -1,11 +1,8 @@
 import React, {useCallback, useEffect} from "react";
-import useCodeMirror from "./use-codemirror";
-import './editor.css'
+import useCodeMirror from "../../use-codemirror";
+import './styles.css'
 
-interface Props {
-    initialDoc: string,
-    onChange: ( doc: string ) => void
-}
+interface Props { initialDoc: string, onChange: ( doc: string ) => void }
 
 const Editor: React.FC<Props> = (props) => {
     const { onChange, initialDoc } = props
@@ -18,11 +15,7 @@ const Editor: React.FC<Props> = (props) => {
         onChange: handleChange
     })
 
-    useEffect(() => {
-        if (editorView) {
-            // Nothing
-        }
-    }, [editorView])
+    useEffect(() => {if (editorView) {/* Nothing */}}, [editorView])
     return <div className="editor-wrapper" ref={refContainer}></div>
 }
 

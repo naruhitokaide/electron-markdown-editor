@@ -1,10 +1,7 @@
 import './shim'
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import './index.css'
+import './styles/index.css'
 import App from './app'
 
-ReactDom.render(
-    <App />,
-    document.getElementById('root')
-)
+ReactDom.render(<App />,document.getElementById('root'))

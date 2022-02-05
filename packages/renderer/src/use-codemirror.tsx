@@ -6,15 +6,10 @@ import { history, historyKeymap } from '@codemirror/history'
 import { indentOnInput } from '@codemirror/language'
 import { bracketMatching } from '@codemirror/matchbrackets'
 import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter'
-import {
-  defaultHighlightStyle,
-  HighlightStyle,
-  tags
-} from '@codemirror/highlight'
+import { defaultHighlightStyle, HighlightStyle, tags } from '@codemirror/highlight'
 import { markdown, markdownLanguage } from '@codemirror/lang-markdown'
 import { languages } from '@codemirror/language-data'
 import { oneDark } from '@codemirror/theme-one-dark'
-import { javascript } from '@codemirror/lang-javascript'
 import type React from 'react'
 
 export const transparentTheme = EditorView.theme({
@@ -47,9 +42,8 @@ interface Props {
   onChange?: (state: EditorState) => void
 }
 
-const useCodeMirror = <T extends Element>(
-  props: Props
-): [React.MutableRefObject<T | null>, EditorView?] => {
+const useCodeMirror = <T extends Element>(props: Props):
+  [React.MutableRefObject<T | null>, EditorView?] => {
   const refContainer = useRef<T>(null)
   const [editorView, setEditorView] = useState<EditorView>()
   const { onChange } = props
@@ -68,24 +62,17 @@ const useCodeMirror = <T extends Element>(
         bracketMatching(),
         defaultHighlightStyle.fallback,
         highlightActiveLine(),
-        markdown({
-          base: markdownLanguage,
-          codeLanguages: languages,
-          addKeymap: true
-        }),
+        markdown({ base: markdownLanguage, codeLanguages: languages, addKeymap: true }),
         oneDark,
         transparentTheme,
-		syntaxHighlighting,
+		    syntaxHighlighting,
         EditorView.lineWrapping,
         EditorView.updateListener.of((update) => {
           if (update.changes) onChange && onChange(update.state)
         })
       ]
     })
-    const view = new EditorView({
-      state: startState,
-      parent: refContainer.current
-    })
+    const view = new EditorView({state: startState, parent: refContainer.current})
     setEditorView(view)
   }, [refContainer])
 

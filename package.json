@@ -1,5 +1,7 @@
 {
-  "name": "vite-electron-builder",
+  "name": "markdown-editor",
+  "author": "Pritam K",
+  "description": "A sleek looking app made with electronJS and REACT ✨ 🎉",
   "private": true,
   "engines": {
     "node": ">=v16.13",

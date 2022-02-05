@@ -10,17 +10,12 @@ type RunModeCallback = (
   to: number
 ) => void
 
-function runmode(
-  textContent: string,
-  language: Language,
-  callback: RunModeCallback
-): void {
+function runmode( textContent: string, language: Language, callback: RunModeCallback ): void {
   const tree = language.parser.parse(textContent)
   let pos = 0
   highlightTree(tree, oneDarkHighlightStyle.match, (from, to, classes) => {
-    if (from > pos) {
+    if (from > pos)
       callback(textContent.slice(pos, from), null, pos, from)
-    }
     callback(textContent.slice(from, to), classes, from, to)
     pos = to
   })
@@ -31,15 +26,12 @@ function runmode(
 
 export function findLanguage(langName: string): LanguageDescription | null {
   const i = languages.findIndex((lang: LanguageDescription) => {
-    if (lang.alias.indexOf(langName) >= 0) {
+    if (lang.alias.indexOf(langName) >= 0)
       return true
-    }
   })
-  if (i >= 0) {
+  if (i >= 0)
     return languages[i]
-  } else {
-    return null
-  }
+  return null
 }
 
 export async function getLanguage(langName: string): Promise<Language | null> {
